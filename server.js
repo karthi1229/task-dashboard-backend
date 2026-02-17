@@ -3,8 +3,15 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+const cors = require("cors");
+
 app.use(cors({
-  origin: "https://task-dashboard-frontend-psi.vercel.app/"
+  origin: [
+    "http://localhost:3000",
+    "https://task-dashboard-frontend-psi.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 
 
